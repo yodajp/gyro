@@ -1,0 +1,15 @@
+@(userForm: Form[User])(implicit messages: Messages)
+@import helper._
+@import play.api.i18n.Messages
+
+@main("entry user"){
+    <h1>Entry User</h1>
+    @helper.form(action=routes.UserController.entrySubmit){
+       <fieldset>
+           <legend>input user info.</legend>
+           @helper.inputText(userForm("name"))
+           @helper.inputText(userForm("email"))
+       </fieldset>
+    <input type="submit" value="entry">
+  }
+}
